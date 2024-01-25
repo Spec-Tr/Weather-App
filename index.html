@@ -3,9 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather By Location</title>
+    <link rel="stylesheet" href="./assets/style/style.css"/>
 </head>
 <body>
-    
+    <header>
+        <h1>Forecast Dashboard</h1>
+    </header>
+    <main>
+        <div>
+            <aside id="vertbar">
+                <section id="city-input">
+                    <h2>Search for a City:</h2>
+                    <input type="text" placeholder="Toronto" id="city-search">
+                    <button id ="search-button">Enter</button>
+                </section>
+                <section id="history"></section>
+            </aside>
+            <section id="forecasts">
+                <section id="current"></section>
+                <section id="future"></section>
+                    <h2>5-Day Outlook</h2>
+                    <div id="five-day-container"></div>
+            </section>
+        </div>
+    </main>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
