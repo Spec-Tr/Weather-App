@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="./assets/style/style.css"/>
 </head>
 <body>
-    <header>
+    <header class="container-fluid">
         <h1>Forecast Dashboard</h1>
     </header>
     <main>
-        <div>
-            <aside id="vertbar">
+        <div class="container-fluid">
+            <aside id="vertbar" class="col-4">
                 <section id="city-input">
                     <h2>Search for a City:</h2>
                     <input type="text" placeholder="Toronto" id="city-search">
@@ -21,7 +21,7 @@
                 </section>
                 <section id="history"></section>
             </aside>
-            <section id="forecasts">
+            <section id="forecasts" class="col-8">
                 <section id="current"></section>
                 <section id="future"></section>
                     <h2>5-Day Outlook</h2>

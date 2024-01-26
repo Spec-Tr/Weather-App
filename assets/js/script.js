@@ -1,6 +1,11 @@
 const APIkey = "965c13a85e2a29ffaffff934e7249830";
 let city;
 
+// Load the search history from local storage when the page loads
+document.addEventListener("DOMContentLoaded", function () {
+    loadSearchHistory();
+});
+
 document.getElementById("search-button").addEventListener("click", function () {
     city = document.getElementById("city-search").value;
     getWeatherData(city);
@@ -22,7 +27,7 @@ function getWeatherData(city) {
             // Update the UI with the 5-day forecast
             update5DayForecast(forecastData);
             
-            // Add the city to the search history
+            // Add the city to the search history and update local storage
             addToHistory(city);
         })
         .catch(error => console.error("Error fetching weather data:", error));
@@ -32,7 +37,7 @@ function update5DayForecast(forecastData) {
     const forecastContainer = document.getElementById("five-day-container");
     forecastContainer.innerHTML = '';
 
-
+    // Assuming the API returns data in 3-hour intervals, and you want daily forecasts
     const dailyForecasts = forecastData.list.filter((item, index) => index % 8 === 0);
 
     dailyForecasts.forEach(forecast => {
@@ -72,5 +77,30 @@ function addToHistory(city) {
         getWeatherData(city);
     });
     historySection.appendChild(cityButton);
+
+    // Update the local storage with the new search history
+    const searchHistory = getSearchHistory();
+    searchHistory.push(city);
+    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
 }
 
+function loadSearchHistory() {
+    const historySection = document.getElementById("history");
+    historySection.innerHTML = '';
+
+    const searchHistory = getSearchHistory();
+    searchHistory.forEach(city => {
+        const cityButton = document.createElement("button");
+        cityButton.textContent = city;
+        cityButton.addEventListener("click", function () {
+            getWeatherData(city);
+        });
+        historySection.appendChild(cityButton);
+    });
+}
+
+function getSearchHistory() {
+    // Retrieve the search history from local storage
+    const searchHistoryString = localStorage.getItem("searchHistory");
+    return JSON.parse(searchHistoryString) || [];
+}
