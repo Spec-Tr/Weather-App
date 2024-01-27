@@ -25,6 +25,7 @@ Information and documentation used in the creation of this app, but external to 
 - https://getbootstrap.com/docs/4.3/utilities/spacing/
 - https://getbootstrap.com/docs/4.3/utilities/colors/
 - https://getbootstrap.com/docs/4.3/layout/overview/
+- https://www.w3schools.com/jsref/prop_win_localstorage.asp
 - https://www.w3schools.com/jsref/api_fetch.asp
 - https://openweathermap.org/current#data 
 
