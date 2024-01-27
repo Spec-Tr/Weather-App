@@ -23,6 +23,8 @@ https://spec-tr.github.io/Weather-App/
 Information and documentation used in the creation of this app, but external to the EdX UofT Full-Stack Software Development Bootcamp including syntaxes, best practises and instructional examples for usage came from the following sources:
 - https://openweathermap.org/current#data
 - https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys
+- https://getbootstrap.com/docs/4.3/utilities/spacing/#horizontal-centering
+- https://getbootstrap.com/docs/4.3/utilities/colors/
 - 
 
 
