@@ -16,7 +16,6 @@ https://spec-tr.github.io/Weather-App/
 ### JavaScript
 ### HTML
 ### CSS
-#### Bootstrap
 
 ## Credits & Sources
 
