@@ -37,7 +37,6 @@ function update5DayForecast(forecastData) {
     const forecastContainer = document.getElementById("five-day-container");
     forecastContainer.innerHTML = '';
 
-    // Assuming the API returns data in 3-hour intervals, and you want daily forecasts
     const dailyForecasts = forecastData.list.filter((item, index) => index % 8 === 0);
 
     dailyForecasts.forEach(forecast => {
@@ -46,12 +45,13 @@ function update5DayForecast(forecastData) {
         
         const forecastCard = document.createElement("div");
         forecastCard.classList.add("forecast-card");
+        forecastCard.classList.add("col-20%")
         forecastCard.innerHTML = `
             <p>Date: ${date.toLocaleDateString()}</p>
+            <img src="https://openweathermap.org/img/w/${icon}.png" alt="Weather Icon">
             <p>Temperature: ${forecast.main.temp} °C</p>
             <p>Humidity: ${forecast.main.humidity}%</p>
             <p>Wind Speed: ${forecast.wind.speed} m/s</p>
-            <img src="https://openweathermap.org/img/w/${icon}.png" alt="Weather Icon">
         `;
 
         forecastContainer.appendChild(forecastCard);
@@ -60,9 +60,12 @@ function update5DayForecast(forecastData) {
 
 function updateCurrentWeather(data) {
     const currentSection = document.getElementById("current");
+    const icon = data.weather[0].icon;
+
     currentSection.innerHTML = `
         <h2>${data.name}</h2>
         <p>Date: ${new Date().toLocaleDateString()}</p>
+        <img src="https://openweathermap.org/img/w/${icon}.png" alt="Weather Icon">
         <p>Temperature: ${data.main.temp} °C</p>
         <p>Humidity: ${data.main.humidity}%</p>
         <p>Wind Speed: ${data.wind.speed} m/s</p>

@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather By Location</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/style/style.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css"/>
 </head>
 <body>
-    <header class="container-fluid">
+    <header class="container-fluid bg-info text-white">
         <h1>Forecast Dashboard</h1>
     </header>
-    <main>
-        <div class="container-fluid">
-            <aside id="vertbar" class="col-4">
+    <main class="container-fluid">
+        <div class="row">
+            <aside id="vertbar" class="col-3 text-black-50">
                 <section id="city-input">
                     <h2>Search for a City:</h2>
                     <input type="text" placeholder="Toronto" id="city-search">
@@ -21,11 +21,11 @@
                 </section>
                 <section id="history"></section>
             </aside>
-            <section id="forecasts" class="col-8">
+            <section id="forecasts" class="col-8 container bg-secondary text-white">
                 <section id="current"></section>
                 <section id="future"></section>
                     <h2>5-Day Outlook</h2>
-                    <div id="five-day-container"></div>
+                    <div id="five-day-container" class="row"></div>
             </section>
         </div>
     </main>
